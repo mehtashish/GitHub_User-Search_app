@@ -23,3 +23,4 @@ artifacts:
     - var/www/html/index.html
     - var/www/html/style.css
     - var/www/html/script.js
+  name: build-output.zip
