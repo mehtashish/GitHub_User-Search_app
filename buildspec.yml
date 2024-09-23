@@ -19,8 +19,10 @@ phases:
       - echo Configuring NGINX
 
 artifacts:
+  base-directory: /var/www/html
   files:
-    - var/www/html/index.html
-    - var/www/html/style.css
-    - var/www/html/script.js
+    - index.html
+    - style.css
+    - script.js
+  discard-paths: yes
   name: build-output.zip
