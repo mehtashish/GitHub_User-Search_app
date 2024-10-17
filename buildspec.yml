@@ -19,7 +19,7 @@ phases:
     commands:
       - echo Configuring NGINX
       - nginx -t
-      - systemctl restart nginx
+      - sudo systemctl restart nginx
 
 artifacts:
   base-directory: /var/www/html
