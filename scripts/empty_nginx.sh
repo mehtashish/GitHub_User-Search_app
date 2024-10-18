@@ -1,0 +1,1 @@
+echo "BeforeInstall phase executed"
