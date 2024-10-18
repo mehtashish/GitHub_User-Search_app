@@ -16,7 +16,7 @@ phases:
       - cp script.js /var/www/html/
       - chmod +x scripts/install_nginx.sh
       - chmod +x scripts/start_nginx.sh
-      - chmod +x scripts/stop_nginx.sh
+      - chmod +x scripts/empty_nginx.sh
       - chmod +x scripts/validate_nginx.sh
 
   post_build:
