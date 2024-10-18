@@ -14,16 +14,17 @@ phases:
       - cp index.html /var/www/html/
       - cp style.css /var/www/html/
       - cp script.js /var/www/html/
+      - chmod +x scripts/install_nginx.sh
+      - chmod +x scripts/start_nginx.sh
+      - chmod +x scripts/stop_nginx.sh
+      - chmod +x scripts/validate_nginx.sh
 
   post_build:
     commands:
       - echo Configuring NGINX
 
 artifacts:
-  base-directory: /var/www/html
   files:
-    - index.html
-    - style.css
-    - script.js
-  discard-paths: yes
+    - '**/*'
+  discard-paths: no
   name: build-output.zip
