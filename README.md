@@ -2,6 +2,12 @@
 
 This project allows users to search for a GitHub username and retrieve detailed information about the account associated with that username, including profile details and repositories.
 
+## Live Demo
+
+You can view the live version of this project at:  
+[ https://mehtashish.github.io/GitHub_User-Search_app/ ]
+
+
 ## Features
 - Search for a GitHub username
 - Retrieve information such as:
@@ -36,15 +42,15 @@ To run this project locally or deploy it, you will need:
 git clone https://github.com/mehtashish/GitHub_User-Search_app.git
 cd GitHub_User-Search_app
 ```
-## 2. Running Locally
+### 2. Running Locally
 
 To run the application locally, simply open the `index.html` file in a browser. It will prompt you to enter a GitHub username, and the relevant account details will be displayed.
 
-## 3. Deployment (Optional)
+### 3. Deployment (Optional)
 
 This project is set up for deployment using AWS services. To deploy it, follow these steps:
 
-### Deploy to EC2 Instance
+## Deploy to EC2 Instance
 
 1. Ensure you have an EC2 instance running and an S3 bucket for storing the deployment files.
 2. Use the following files:
