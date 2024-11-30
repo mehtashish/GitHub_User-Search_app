@@ -5,13 +5,17 @@ const form = document.getElementById('form')
 const search = document.getElementById('search')
 
 async function getUser(username) {
+    console.log("Fetching user data for:", username);
     try {
         const { data } = await axios(APIURL + username)
 
         createUserCard(data)
         getRepos(username)
+        notifySearch(username)
+
     } catch (err) {
-        if (err.response.status == 404) {
+        console.error("Error fetching user:", err);
+        if (err.response && err.response.status == 404) {
             createErrorCard('No profile with this username!')
         }
     }
@@ -49,7 +53,6 @@ function createUserCard(user) {
   </div>
     `
     main.innerHTML = cardHTML
-
 }
 
 function createErrorCard(msg) {
@@ -78,14 +81,34 @@ function addReposToCard(repos) {
         })
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
+async function notifySearch(username) {
+    const bodyData = JSON.stringify({
+        body: JSON.stringify({ username })
+    });
 
-    const user = search.value
+    const response = await fetch('https://3xdnej4bm0.execute-api.us-east-1.amazonaws.com/dep/notification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: bodyData,
+    });
+
+    if (response.ok) {
+        console.log('Notification sent!');
+    } else {
+        console.error('Failed to send notification', await response.text());
+    }
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = search.value.trim();
+
+    console.log("Search value submitted:", user);
 
     if (user) {
-        getUser(user)
-
-        search.value = ''
+        getUser(user);
+        search.value = '';
+    } else {
+        console.log("No username entered");
     }
-})
+});
