@@ -5,18 +5,20 @@
 }
 
 body {
-    background-color: darkslategray;
-    /* background-image: url(https://images.unsplash.com/photo-1495568995596-9e40959aa178?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hZ25pZnlpbmclMjBnbGFzc3xlbnwwfDB8MHx8fDA%3D); */
+    width: 100%;
+    height: 100vh;
+    background-color: lightgray;
     background-size: cover;
-    color: #fff;
+    background-position: center;
+    color: darkslategray;
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     overflow: hidden;
     margin: 0;
+    padding-top: 20px;
 }
 
 .user-form {
@@ -37,10 +39,6 @@ body {
     font-size: 1rem;
     box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
         0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.user-form input::placeholder {
-    color: black;
 }
 
 .user-form input:focus {
@@ -70,8 +68,19 @@ body {
     margin-left: 2rem;
 }
 
-.user-info h2 {
+.user-info h1 {
     margin-top: 0;
+}
+
+.user-info h1 a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.user-info h1 a:hover {
+    text-decoration: underline;
+    color: lightgray;
 }
 
 .user-info ul {
@@ -92,15 +101,33 @@ body {
     margin-left: 0.5rem;
 }
 
+.user-info ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.user-info ul li a:hover {
+    text-decoration: underline;
+}
+
 .repo {
     text-decoration: none;
     color: black;
     background-color: lightgray;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     padding: 0.25rem 0.5rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     display: inline-block;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.repo:hover {
+    text-decoration: underline;
+    /* color: darkslategray;  */
+    background-color: darkgray;
 }
 
 @media (max-width: 500px) {
