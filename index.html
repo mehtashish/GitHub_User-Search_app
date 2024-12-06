@@ -5,17 +5,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Finding Github Profiles</title>
+    <title>Finding GitHub Profiles...</title>
 </head>
 
 <body>
-    <h1>Are you on Github?</h1>
-    <form class="user-form" id="form">
-        <h2>Let's find youuu!!</h2>
-        <input type="text" id="search" placeholder="Enter your Github username...">
-    </form>
+    <header class="navbar">
+        <div class="navbar-logo">GitHub Finder</div>
+        <nav class="navbar-links">
+            <a href="#home" class="navbar-link">Home</a>
+            <a href="#contact" class="navbar-link">Contact</a><br>
+            <div class="theme-toggle">
+                <button id="toggleTheme" class="theme-btn">
+                    <span class="theme-text">Light</span> 🌙
+                </button>
+            </div>
+        </nav>
+    </header>
 
-    <main id="main"></main>
+    <div class="container">
+        <form class="user-form search-form" id="form">
+            <h1 id="heading">Are you on GitHub? 👀</h1><br><br><br>
+            <h2>Let's find youuu!!</h2>
+
+            <input type="text" id="search" placeholder="🔍 Enter your GitHub username..." />
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+
+        <main id="main" class="main-content"> </main>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
         integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
