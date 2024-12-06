@@ -3,6 +3,14 @@ const APIURL = 'https://api.github.com/users/'
 const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
+const toggleThemeBtn = document.getElementById('toggleTheme');
+const body = document.body;
+
+toggleThemeBtn.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    const themeText = document.querySelector('.theme-text');
+    themeText.textContent = body.classList.contains('light-mode') ? 'Dark' : 'Light';
+});
 
 async function getUser(username) {
     console.log("Fetching user data for:", username);
@@ -84,6 +92,8 @@ function addReposToCard(repos) {
         reposEl.appendChild(repoEl);
     });
 }
+
+// for integrating AWS SNS service
 
 async function notifySearch(username) {
     const bodyData = JSON.stringify({
